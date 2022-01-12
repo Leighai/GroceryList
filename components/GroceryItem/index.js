@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const GroceryCont = styled.div`
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   display: flex;
   position: relative;
   justify-content: center;

@@ -1,7 +1,9 @@
-import GroceryItem from "../components/groceryItem"
+import GroceryItem from "../components/groceryItem";
+import GroceryList from "../components/GroceryList";
+
 import styled from "styled-components"
 
-const GroceryListCont = styled.div`
+const AppCont = styled.div`
   margin: 0;
   width: 100vw;
   height: 100vh;
@@ -11,8 +13,19 @@ const GroceryListCont = styled.div`
   align-items: center;
 `
 
-const Column = styled.div`
+const MainColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid green;
+  min-height: 100%;
+  min-width: 45%;
+`
 
+const Column = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 const Subcolumn = styled.div`
@@ -21,26 +34,37 @@ const Subcolumn = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0;
-  flex-wrap: wrap;
-  max-height: 100vh;
+
 `
 
+const Title = styled.h1`
+`
 
 
 export default function Home() {
   return (
-    <GroceryListCont>
-      <Column>
-        <h1>Popular Items</h1>
-        <Subcolumn>
-          <GroceryItem imgUrl="/egg.png" />
-          <GroceryItem imgUrl="/egg.png" />
-          <GroceryItem imgUrl="/egg.png" />
-          <GroceryItem imgUrl="/egg.png" />
-          <GroceryItem imgUrl="/egg.png" />
-          <GroceryItem imgUrl="/egg.png" />
-        </Subcolumn>
-      </Column>
-    </GroceryListCont>
+    <AppCont>
+      <MainColumn>
+        <Title>Popular Items</Title>
+        <Column>
+          <Subcolumn>
+            <GroceryItem imgUrl="/egg.png" />
+            <GroceryItem imgUrl="/egg.png" />
+            <GroceryItem imgUrl="/egg.png" />
+          </Subcolumn>
+          <Subcolumn>
+            <GroceryItem imgUrl="/egg.png" />
+            <GroceryItem imgUrl="/egg.png" />
+            <GroceryItem imgUrl="/egg.png" />
+          </Subcolumn>
+        </Column>
+      </MainColumn>
+      <MainColumn>
+        <Title>Grocery List</Title>
+        <Column>
+          <GroceryList />
+        </Column>
+      </MainColumn>
+    </AppCont>
   )
 }
