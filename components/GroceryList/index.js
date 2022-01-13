@@ -15,7 +15,7 @@ const GroceryList = ({
 }) => {
   return(
     <GroceryListCont>
-      <ListHeader header = "Hello!" />
+      <ListHeader header = "Category" />
       <ListItem />
     </GroceryListCont>
   )

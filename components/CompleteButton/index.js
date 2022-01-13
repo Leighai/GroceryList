@@ -5,13 +5,15 @@ const CompleteCont = styled.div`
   position: absolute;
   right: 0;
   align-items: center;
+  margin-right: 10px;
 `
 
 const CompleteText = styled.p`
-
+  margin: 20px;
 `
 
 const CompleteInput = styled.input`
+  transform: scale(1.5);
 `
 
 const CompleteButton = ({
