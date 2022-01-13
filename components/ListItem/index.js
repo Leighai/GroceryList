@@ -34,15 +34,14 @@ const Column = styled.div`
 `
 
 const ListItem = ({
-
-  ItemTitle = "Default"
-
+  ItemTitle = "Default",
+  Quantity=6
 }) => {
   return(
     <ListItemCont>
       <ListItemTitle>{ItemTitle}</ListItemTitle>
       <NumberCont>
-        <p>6</p>
+        <p>{Quantity}</p>
       </NumberCont>
       <Column>
         <QuantityButton sign="+" />

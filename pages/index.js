@@ -2,6 +2,7 @@ import GroceryItem from "../components/groceryItem";
 import GroceryList from "../components/GroceryList";
 
 import styled from "styled-components"
+import ListItem from "../components/ListItem";
 
 const AppCont = styled.div`
   margin: 0;
@@ -41,6 +42,10 @@ const Title = styled.h1`
 
   const data = []
 
+  const isData = "";
+
+  const x = 0
+
   const AddItem = (name, quantity, category) => {
 
     data.push({
@@ -48,6 +53,8 @@ const Title = styled.h1`
       quantity,
       category
     })
+  
+    isData="heck yes"
     
     console.log(data)
   }
@@ -61,13 +68,13 @@ export default function Home() {
         <Title>Popular Items</Title>
         <Column>
           <Subcolumn>
-            <GroceryItem imgUrl="/egg.png" itemText="Eggs" />
-            <GroceryItem imgUrl="/coffee.png" itemText="Coffee" />
-            <GroceryItem imgUrl="/milk.png" itemText="Milk" />
+            <GroceryItem imgUrl="/egg.png" itemText="Eggs" onClick={() => AddItem("Eggs",1,"Poultry")}/>
+            <GroceryItem imgUrl="/coffee.png" itemText="Coffee" onClick={() => AddItem("Coffee",1,"Dry Items")}/>
+            <GroceryItem imgUrl="/milk.png" itemText="Milk" onClick={() => AddItem("Milk",1,"Dairy")}/>
           </Subcolumn>
           <Subcolumn>
-            <GroceryItem imgUrl="/pasta.png" itemText="Pasta" />
-            <GroceryItem imgUrl="/carrot.png" itemText="Carrots" />
+            <GroceryItem imgUrl="/pasta.png" itemText="Pasta" onClick={() => AddItem("Pasta",1,"Dry Items")}/>
+            <GroceryItem imgUrl="/carrot.png" itemText="Carrots" onClick={() => AddItem("Carrots",1,"Vegetables")}/>
             <GroceryItem imgUrl="/banana.png" itemText="Bananas" onClick={() => AddItem("Bananas",1,"Fruits")} />
           </Subcolumn>
         </Column>
@@ -76,7 +83,12 @@ export default function Home() {
       <MainColumn>
         <Title>Grocery List</Title>
         <Column>
-          <GroceryList />
+        <GroceryList>
+          {isData ? data.map((data) =>
+          <ListItem ItemTitle={data.key}/>
+          ):
+          <p>Click a plus icon to add to the grocery list!</p>}
+        </GroceryList>
         </Column>
       </MainColumn>
     </AppCont>
