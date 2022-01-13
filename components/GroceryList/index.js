@@ -8,6 +8,7 @@ const GroceryListCont = styled.div`
   flex-direction: column;
   width: 100%;
   position: relative;
+
 `
 
 const GroceryList = ({

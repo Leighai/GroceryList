@@ -37,6 +37,7 @@ const Subcolumn = styled.div`
 `
 
 const Title = styled.h1`
+  height: 70px;
 `
 
 const data = []
