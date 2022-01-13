@@ -12,9 +12,8 @@ const GroceryListCont = styled.div`
 const GroceryList = ({children}) => {
   return(
     <GroceryListCont>
-      {children}
       <ListHeader header = "Category" />
-      <ListItem />
+      {children}
     </GroceryListCont>
   )
 }

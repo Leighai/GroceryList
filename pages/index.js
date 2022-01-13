@@ -37,14 +37,15 @@ const Subcolumn = styled.div`
 
 `
 
+const ListCont = styled.div`
+  width: 100%;
+  height: 60px;
+`
+
 const Title = styled.h1`
 `
 
 const data = []
-
-  const isData = "";
-
-  const x = 0
 
   const AddItem = (name, quantity, category) => {
 
@@ -53,9 +54,6 @@ const data = []
       quantity,
       category
     })
-  
-    isData="heck yes"
-    
     console.log(data)
   }
 
@@ -83,8 +81,11 @@ export default function Home() {
         <Title>Grocery List</Title>
         <Column>
         <GroceryList>
-          {isData ? data.map((data) =>
-          <ListItem ItemTitle={data.key}/>
+          {data ? data.map((o,i) => {
+          <ListCont key={i}>
+            <ListItem ItemTitle={o.name} Quantity={o.quantity}/>
+          </ListCont>
+          }
           ):
           <p>Click a plus icon to add to the grocery list!</p>}
         </GroceryList>
