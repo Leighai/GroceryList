@@ -10,6 +10,13 @@ const GroceryCont = styled.div`
   background-color: white;
   margin: 10px;
   border-radius: 10px;
+  cursor: default;
+  opacity: 70%;
+  transition: opacity 0.1s ease-in;
+
+  &:hover {
+    opacity: 100%;
+  }
 `
 
 const GroceryImg = styled.img`
@@ -25,14 +32,28 @@ const GroceryText = styled.h1`
   z-index: 1;
 `
 
+const GroceryButton = styled.button`
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: 50px;
+  height: 40px;
+  background-color: rgb(120, 106, 128);
+  color: #FFF;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+`
+
 const GroceryItem = ({
   imgUrl = 'cross.png',
   itemText = 'Default Text',
-  onClick=()=>{}
+  onClick=()=>{},
 }) => {
   return (
-    <GroceryCont onClick={onClick}>
+    <GroceryCont>
       <GroceryImg src={imgUrl} />
+      <GroceryButton onClick={onClick}>+</GroceryButton>
       <GroceryText>{itemText}</GroceryText>
     </GroceryCont>
   )

@@ -39,19 +39,18 @@ const Subcolumn = styled.div`
 const Title = styled.h1`
 `
 
-  const data = []
+const data = []
 
-  const AddItem = (name, quantity, category) => {
+const AddItem = (name, quantity, category) => {
 
-    data.push({
-      name,
-      quantity,
-      category
-    })
-    
-    console.log(data)
-  }
-
+  data.push({
+    name,
+    quantity,
+    category
+  })
+  
+  console.log(data)
+}
 
 export default function Home() {
 
