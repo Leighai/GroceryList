@@ -40,7 +40,7 @@ const Subcolumn = styled.div`
 const Title = styled.h1`
 `
 
-  const data = []
+const data = []
 
   const isData = "";
 
@@ -58,7 +58,6 @@ const Title = styled.h1`
     
     console.log(data)
   }
-
 
 export default function Home() {
 

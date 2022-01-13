@@ -12,8 +12,9 @@ const GroceryListCont = styled.div`
 const GroceryList = ({children}) => {
   return(
     <GroceryListCont>
-      <ListHeader header = "Hello!" />
       {children}
+      <ListHeader header = "Category" />
+      <ListItem />
     </GroceryListCont>
   )
 }
