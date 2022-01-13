@@ -86,11 +86,11 @@ export default function Home() {
         <Title>Grocery List</Title>
         <Column>
         <GroceryList>
-          {mappedData ? mappedData.map((o,i) => {
+          {mappedData ? mappedData.map((o,i) => 
           <ListCont key={i}>
             <ListItem ItemTitle={o.name} Quantity={o.quantity}/>
           </ListCont>
-          }
+          
           ):
           <p>Click a plus icon to add to the grocery list!</p>}
         </GroceryList>
