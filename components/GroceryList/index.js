@@ -1,4 +1,5 @@
 import ListHeader from "../ListHeader";
+import ListItem from "../ListItem";
 
 import styled from "styled-components";
 
@@ -12,7 +13,6 @@ const GroceryListCont = styled.div`
 const GroceryList = ({children}) => {
   return(
     <GroceryListCont>
-      <ListHeader header = "Category" />
       {children}
     </GroceryListCont>
   )
