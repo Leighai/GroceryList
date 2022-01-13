@@ -16,12 +16,12 @@ const HeaderText = styled.h2`
 
 const ListHeader = ({
 
-  text = "Default"
+  header = "Default"
 
 }) => {
   return(
     <HeaderCont>
-      <HeaderText>{text}</HeaderText>
+      <HeaderText>{header}</HeaderText>
     </HeaderCont>
     )
 }
