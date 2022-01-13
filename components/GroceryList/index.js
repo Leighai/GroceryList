@@ -1,4 +1,5 @@
 import ListHeader from "../ListHeader";
+import ListItem from "../ListItem";
 
 import styled from "styled-components";
 
@@ -6,6 +7,7 @@ const GroceryListCont = styled.div`
   display: flex;
   flex-direction: column;
   width: 500px;
+  position: relative;
 `
 
 const GroceryList = ({
@@ -13,7 +15,8 @@ const GroceryList = ({
 }) => {
   return(
     <GroceryListCont>
-      <ListHeader text = "Hello!" />
+      <ListHeader header = "Hello!" />
+      <ListItem />
     </GroceryListCont>
   )
 }
