@@ -37,14 +37,15 @@ const Subcolumn = styled.div`
 
 `
 
+const ListCont = styled.div`
+  width: 100%;
+  height: 60px;
+`
+
 const Title = styled.h1`
 `
 
 const data = []
-
-  const isData = "";
-
-  const x = 0
 
   const AddItem = (name, quantity, category) => {
 
@@ -53,9 +54,6 @@ const data = []
       quantity,
       category
     })
-  
-    isData="heck yes"
-    
     console.log(data)
   }
 

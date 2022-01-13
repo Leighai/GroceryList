@@ -13,6 +13,7 @@ const GroceryListCont = styled.div`
 const GroceryList = ({children}) => {
   return(
     <GroceryListCont>
+      {children}
     </GroceryListCont>
   )
 }

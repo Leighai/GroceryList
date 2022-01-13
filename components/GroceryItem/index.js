@@ -35,7 +35,7 @@ const GroceryText = styled.h1`
 
 const GroceryButton = styled.button`
   position: absolute;
-  top: 5%;
+  top: -5%;
   right: 5%;
   width: 50px;
   height: 40px;
