@@ -1,14 +1,13 @@
 import GroceryItem from "../components/groceryItem";
 import GroceryList from "../components/GroceryList";
-
 import styled from "styled-components"
+
 
 const AppCont = styled.div`
   margin: 0;
   width: 100vw;
   height: 100vh;
   display: flex;
-  font-family: Arial, Helvetica, sans-serif;
   justify-content: space-around;
   align-items: center;
 `
@@ -33,12 +32,22 @@ const Subcolumn = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0;
-
 `
 
 const Title = styled.h1`
-  height: 70px;
+  height: 80px;
+  font-weight: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
+
+const Divider = styled.div`
+  background-color: rgb(120, 106, 128);
+  width: 3px;
+  height: 90%;
+  border-radius: 10px;
+`;
 
 const data = []
 
@@ -73,6 +82,7 @@ export default function Home() {
         </Column>
         <button onClick={()=>console.log(data)}>show data</button>
       </MainColumn>
+      <Divider/>
       <MainColumn>
         <Title>Grocery List</Title>
         <Column>
