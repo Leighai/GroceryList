@@ -44,6 +44,12 @@ const GroceryButton = styled.button`
   font-size: 18px;
   border-radius: 10px;
   cursor: pointer;
+  z-index: 1;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: green;
+  }
 `
 
 const GroceryItem = ({

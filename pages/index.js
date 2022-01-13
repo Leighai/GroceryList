@@ -83,10 +83,6 @@ export default function Home() {
         <Title>Grocery List</Title>
         <Column>
         <GroceryList>
-          {isData ? data.map((data) =>
-          <ListItem ItemTitle={data.key}/>
-          ):
-          <p>Click a plus icon to add to the grocery list!</p>}
         </GroceryList>
         </Column>
       </MainColumn>
