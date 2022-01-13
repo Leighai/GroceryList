@@ -31,10 +31,12 @@ const GroceryButton = styled.button`
 
 const GroceryItem = ({
   imgUrl = 'cross.png',
-  itemText = 'Default Text'
+  itemText = 'Default Text',
+  onClick=()=>{}
 }) => {
   return (
     <GroceryCont>
+      <button onClick={onClick}> THE BIG BUTTON</button>
       <GroceryImg src={imgUrl} />
       <GroceryText>{itemText}</GroceryText>
     </GroceryCont>

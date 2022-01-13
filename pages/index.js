@@ -41,6 +41,19 @@ const Title = styled.h1`
 
 
 export default function Home() {
+  const data = []
+
+  function AddItem (name, quantity, category) {
+    
+    data.push({
+      name,
+      quantity,
+      category
+    })
+    
+    console.log(data)
+  }
+
   return (
     <AppCont>
       <MainColumn>
@@ -54,9 +67,10 @@ export default function Home() {
           <Subcolumn>
             <GroceryItem imgUrl="/pasta.png" itemText="Pasta" />
             <GroceryItem imgUrl="/carrot.png" itemText="Carrots" />
-            <GroceryItem imgUrl="/banana.png" itemText="Bananas" />
+            <GroceryItem imgUrl="/banana.png" itemText="Bananas" onClick={AddItem("Bananas",1,"Fruits")} />
           </Subcolumn>
         </Column>
+        <button onClick={()=>console.log(data)}>show data</button>
       </MainColumn>
       <MainColumn>
         <Title>Grocery List</Title>
