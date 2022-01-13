@@ -39,12 +39,10 @@ const Subcolumn = styled.div`
 const Title = styled.h1`
 `
 
-
-export default function Home() {
   const data = []
 
-  function AddItem (name, quantity, category) {
-    
+  const AddItem = (name, quantity, category) => {
+
     data.push({
       name,
       quantity,
@@ -53,6 +51,9 @@ export default function Home() {
     
     console.log(data)
   }
+
+
+export default function Home() {
 
   return (
     <AppCont>
@@ -67,7 +68,7 @@ export default function Home() {
           <Subcolumn>
             <GroceryItem imgUrl="/pasta.png" itemText="Pasta" />
             <GroceryItem imgUrl="/carrot.png" itemText="Carrots" />
-            <GroceryItem imgUrl="/banana.png" itemText="Bananas" onClick={AddItem("Bananas",1,"Fruits")} />
+            <GroceryItem imgUrl="/banana.png" itemText="Bananas" onClick={() => AddItem("Bananas",1,"Fruits")} />
           </Subcolumn>
         </Column>
         <button onClick={()=>console.log(data)}>show data</button>
