@@ -23,6 +23,7 @@ const GroceryImg = styled.img`
   width: 90%;
   height: 90%;
   position: absolute;
+  z-index: 1;
 `
 
 const GroceryText = styled.h1`

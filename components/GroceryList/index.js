@@ -1,5 +1,4 @@
 import ListHeader from "../ListHeader";
-import ListItem from "../ListItem";
 
 import styled from "styled-components";
 
@@ -10,11 +9,10 @@ const GroceryListCont = styled.div`
   position: relative;
 `
 
-const GroceryList = ({
-
-}) => {
+const GroceryList = ({children}) => {
   return(
     <GroceryListCont>
+      {children}
       <ListHeader header = "Category" />
       <ListItem />
     </GroceryListCont>
