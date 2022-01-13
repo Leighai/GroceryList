@@ -17,7 +17,6 @@ const MainColumn = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  border: 1px solid green;
   min-height: 100%;
   min-width: 45%;
 `
@@ -62,13 +61,13 @@ export default function Home() {
         <Column>
           <Subcolumn>
             <GroceryItem imgUrl="/egg.png" itemText="Eggs" />
-            <GroceryItem imgUrl="/egg.png" itemText="Coffee" />
-            <GroceryItem imgUrl="/egg.png" itemText="Bananas" onClick={AddItem("Bananas",1,"Fruits")}/>
+            <GroceryItem imgUrl="/coffee.png" itemText="Coffee" />
+            <GroceryItem imgUrl="/milk.png" itemText="Milk" />
           </Subcolumn>
           <Subcolumn>
-            <GroceryItem imgUrl="/egg.png" itemText="Milk" />
-            <GroceryItem imgUrl="/egg.png" itemText="Pasta" />
-            <GroceryItem imgUrl="/egg.png" itemText="Carrots" />
+            <GroceryItem imgUrl="/pasta.png" itemText="Pasta" />
+            <GroceryItem imgUrl="/carrot.png" itemText="Carrots" />
+            <GroceryItem imgUrl="/banana.png" itemText="Bananas" onClick={AddItem("Bananas",1,"Fruits")} />
           </Subcolumn>
         </Column>
         <button onClick={()=>console.log(data)}>show data</button>
