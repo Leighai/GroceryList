@@ -20,7 +20,7 @@ const CompleteButton = ({
   return(
     <CompleteCont>
       <CompleteText>Complete</CompleteText>
-      <CompleteButton type="checkbox" />
+      <CompleteInput type="checkbox" />
     </CompleteCont>
   )
 }
