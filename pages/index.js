@@ -1,6 +1,8 @@
 import GroceryItem from "../components/groceryItem";
 import GroceryList from "../components/GroceryList";
 
+import { useState } from "react";
+
 import styled from "styled-components"
 import ListItem from "../components/ListItem";
 
@@ -47,18 +49,21 @@ const Title = styled.h1`
 
 const data = []
 
-  const AddItem = (name, quantity, category) => {
-
-    data.push({
-      name,
-      quantity,
-      category
-    })
-    console.log(data)
-  }
-
 export default function Home() {
-
+  const [mappedData, setMappedData] = useState()
+  
+    const AddItem = (name, quantity, category) => {
+  
+      data.push({
+        name,
+        quantity,
+        category
+      })
+      
+  
+      setMappedData(data)
+      console.log(mappedData)
+    }
   return (
     <AppCont>
       <MainColumn>
@@ -75,13 +80,13 @@ export default function Home() {
             <GroceryItem imgUrl="/banana.png" itemText="Bananas" onClick={() => AddItem("Bananas",1,"Fruits")} />
           </Subcolumn>
         </Column>
-        <button onClick={()=>console.log(data)}>show data</button>
+        <button onClick={()=>console.log(mappedData[1])}>show data</button>
       </MainColumn>
       <MainColumn>
         <Title>Grocery List</Title>
         <Column>
         <GroceryList>
-          {data ? data.map((o,i) => {
+          {mappedData ? mappedData.map((o,i) => {
           <ListCont key={i}>
             <ListItem ItemTitle={o.name} Quantity={o.quantity}/>
           </ListCont>
