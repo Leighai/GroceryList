@@ -25,18 +25,13 @@ const GroceryText = styled.h1`
   z-index: 1;
 `
 
-const GroceryButton = styled.button`
-
-`
-
 const GroceryItem = ({
   imgUrl = 'cross.png',
   itemText = 'Default Text',
   onClick=()=>{}
 }) => {
   return (
-    <GroceryCont>
-      <button onClick={onClick}> THE BIG BUTTON</button>
+    <GroceryCont onClick={onClick}>
       <GroceryImg src={imgUrl} />
       <GroceryText>{itemText}</GroceryText>
     </GroceryCont>
