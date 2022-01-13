@@ -6,7 +6,7 @@ import styled from "styled-components";
 const GroceryListCont = styled.div`
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 600px;
   position: relative;
 `
 
@@ -15,7 +15,7 @@ const GroceryList = ({
 }) => {
   return(
     <GroceryListCont>
-      <ListHeader header = "Hello!" />
+      <ListHeader header = "Category" />
       <ListItem />
     </GroceryListCont>
   )

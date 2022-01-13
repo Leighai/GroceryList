@@ -17,7 +17,6 @@ const MainColumn = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  border: 1px solid green;
   min-height: 100%;
   min-width: 45%;
 `

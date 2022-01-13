@@ -19,9 +19,9 @@ const GroceryImg = styled.img`
 `
 
 const GroceryText = styled.h1`
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Inter;
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
   z-index: 1;
 `
 
