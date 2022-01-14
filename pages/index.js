@@ -153,7 +153,7 @@ export default function Home() {
         <GroceryList>
           {mappedData ? mappedData.map((o,i) => 
           <ListCont key={i}>
-            <ListItem ItemTitle={o.name} Quantity={o.quantity} 
+            <ListItem ItemTitle={o.name} Quantity={o.quantity} category={o.category}
               
               onClickPlus={() => {o.quantity = o.quantity + 1; setMappedData(null);
                 console.log(mappedData);
