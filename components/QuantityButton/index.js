@@ -29,10 +29,11 @@ const QuantityButton = ({
   sign="=",
   bgColor="rgb(120, 106, 128)",
   color="#fff",
+  onClick = ()=>{}
 
 }) => {
   return(
-    <QuantityCont bgColor={bgColor} color={color}>
+    <QuantityCont bgColor={bgColor} color={color} onClick={onClick}>
       <QuantityText>{sign}</QuantityText>
     </QuantityCont>
   )

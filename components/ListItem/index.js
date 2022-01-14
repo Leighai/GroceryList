@@ -37,7 +37,10 @@ const Column = styled.div`
 
 const ListItem = ({
   ItemTitle = "Default",
-  Quantity=6
+  Quantity=6,
+  onClickPlus=()=>{},
+  onClickMinus=()=>{}
+
 }) => {
   return(
     <ListItemCont>
@@ -46,8 +49,8 @@ const ListItem = ({
         <p>{Quantity}</p>
       </NumberCont>
       <Column>
-        <QuantityButton sign="+" />
-        <QuantityButton sign="-" bgColor="lightgrey" />
+        <QuantityButton sign="+" onClick={onClickPlus} />
+        <QuantityButton sign="-" bgColor="lightgrey" onClick={onClickMinus} />
       </Column>
       <CompleteButton />
     </ListItemCont>
