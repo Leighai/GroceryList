@@ -1,6 +1,10 @@
 import GroceryItem from "../components/groceryItem";
 import GroceryList from "../components/GroceryList";
+
+import { useState } from "react";
+
 import styled from "styled-components"
+import ListItem from "../components/ListItem";
 
 
 const AppCont = styled.div`
@@ -34,6 +38,11 @@ const Subcolumn = styled.div`
   margin: 0;
 `
 
+const ListCont = styled.div`
+  width: 100%;
+  height: 60px;
+`
+
 const Title = styled.h1`
   height: 80px;
   font-weight: 900px;
@@ -51,42 +60,52 @@ const Divider = styled.div`
 
 const data = []
 
-const AddItem = (name, quantity, category) => {
-
-  data.push({
-    name,
-    quantity,
-    category
-  })
-  
-  console.log(data)
-}
-
 export default function Home() {
-
+  const [mappedData, setMappedData] = useState()
+  
+    const AddItem = (name, quantity, category) => {
+  
+      data.push({
+        name,
+        quantity,
+        category
+      })
+      
+  
+      setMappedData(data)
+      console.log(mappedData)
+    }
   return (
     <AppCont>
       <MainColumn>
         <Title>Popular Items</Title>
         <Column>
           <Subcolumn>
-            <GroceryItem imgUrl="/egg.png" itemText="Eggs" />
-            <GroceryItem imgUrl="/coffee.png" itemText="Coffee" />
-            <GroceryItem imgUrl="/milk.png" itemText="Milk" />
+            <GroceryItem imgUrl="/egg.png" itemText="Eggs" onClick={() => AddItem("Eggs",1,"Poultry")}/>
+            <GroceryItem imgUrl="/coffee.png" itemText="Coffee" onClick={() => AddItem("Coffee",1,"Dry Items")}/>
+            <GroceryItem imgUrl="/milk.png" itemText="Milk" onClick={() => AddItem("Milk",1,"Dairy")}/>
           </Subcolumn>
           <Subcolumn>
-            <GroceryItem imgUrl="/pasta.png" itemText="Pasta" />
-            <GroceryItem imgUrl="/carrot.png" itemText="Carrots" />
+            <GroceryItem imgUrl="/pasta.png" itemText="Pasta" onClick={() => AddItem("Pasta",1,"Dry Items")}/>
+            <GroceryItem imgUrl="/carrot.png" itemText="Carrots" onClick={() => AddItem("Carrots",1,"Vegetables")}/>
             <GroceryItem imgUrl="/banana.png" itemText="Bananas" onClick={() => AddItem("Bananas",1,"Fruits")} />
           </Subcolumn>
         </Column>
-        <button onClick={()=>console.log(data)}>show data</button>
+        <button onClick={()=>console.log(mappedData[1])}>show data</button>
       </MainColumn>
       <Divider/>
       <MainColumn>
         <Title>Grocery List</Title>
         <Column>
-          <GroceryList />
+        <GroceryList>
+          {mappedData ? mappedData.map((o,i) => 
+          <ListCont key={i}>
+            <ListItem ItemTitle={o.name} Quantity={o.quantity}/>
+          </ListCont>
+          
+          ):
+          <p>Click a plus icon to add to the grocery list!</p>}
+        </GroceryList>
         </Column>
       </MainColumn>
     </AppCont>

@@ -24,6 +24,7 @@ const GroceryImg = styled.img`
   width: 90%;
   height: 90%;
   position: absolute;
+  z-index: 1;
 `
 
 const GroceryText = styled.h1`
@@ -35,7 +36,7 @@ const GroceryText = styled.h1`
 
 const GroceryButton = styled.button`
   position: absolute;
-  top: 5%;
+  top: -5%;
   right: 5%;
   width: 50px;
   height: 40px;
@@ -47,6 +48,8 @@ const GroceryButton = styled.button`
 
   &:hover {
     color: rgb(61, 55, 65);
+  z-index: 1;
+  transition: background-color 0.2s;
   }
 `
 
