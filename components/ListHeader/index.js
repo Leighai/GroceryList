@@ -6,14 +6,15 @@ const HeaderCont = styled.div`
   display: flex;
   align-items: center;
   padding: 10px;
-
+  border: 1px solid #000;
+  border-radius: 0px 50px 0px 0px;
 `
 
 const HeaderText = styled.h2`
   margin: 0;
-  font-weight: 600;
+  font-weight: 600px;
   font-size: 18px;
-  font-family: Inter;
+  color: rgb(61, 55, 65);
 `
 
 const ListHeader = ({

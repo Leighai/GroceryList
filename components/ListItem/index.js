@@ -7,25 +7,27 @@ const ListItemCont = styled.div`
   display: flex;
   align-items: center;
   background-color: rgb(216, 196, 226);
-  height: 60px;
+  height: 65px;
   padding: 10px;
+  border: 0.5px solid #000;
 `
 
 const ListItemTitle = styled.h2`
   margin: 0;
   font-size: 20px;
-  margin-right: 20px;
+  margin-right: 30px;
 `
 
 const NumberCont = styled.div`
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   background-color: #FFF;
   border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 20px;
+  margin-right: 15px;
+  border: 2px solid grey;
 `
 
 const Column = styled.div`
@@ -45,7 +47,7 @@ const ListItem = ({
       </NumberCont>
       <Column>
         <QuantityButton sign="+" />
-        <QuantityButton sign="-" />
+        <QuantityButton sign="-" bgColor="lightgrey" />
       </Column>
       <CompleteButton />
     </ListItemCont>

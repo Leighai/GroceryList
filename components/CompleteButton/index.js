@@ -13,7 +13,7 @@ const CompleteText = styled.p`
 `
 
 const CompleteInput = styled.input`
-  transform: scale(1.5);
+  transform: scale(1.7);
 `
 
 const CompleteButton = ({
