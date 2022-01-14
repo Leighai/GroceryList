@@ -36,7 +36,7 @@ const GroceryText = styled.h1`
 
 const GroceryButton = styled.button`
   position: absolute;
-  top: -5%;
+  top: 5%;
   right: 5%;
   width: 50px;
   height: 40px;
@@ -45,6 +45,8 @@ const GroceryButton = styled.button`
   font-size: 25px;
   border-radius: 10px;
   cursor: pointer;
+  z-index: 1;
+  
 
   &:hover {
     color: rgb(61, 55, 65);
