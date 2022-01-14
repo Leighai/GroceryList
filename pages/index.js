@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import styled from "styled-components"
 import ListItem from "../components/ListItem";
+import DoneButton from "../components/DoneButton";
 
 
 const AppCont = styled.div`
@@ -33,9 +34,10 @@ const Column = styled.div`
 const Subcolumn = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin: 0;
+  height: 80vh;
 `
 
 const ListCont = styled.div`
@@ -49,6 +51,7 @@ const Title = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
 `
 
 const Divider = styled.div`
@@ -58,9 +61,10 @@ const Divider = styled.div`
   border-radius: 10px;
 `;
 
-const data = []
-
 export default function Home() {
+
+  const [data, setData] = useState([]);
+
   const [mappedData, setMappedData] = useState()
   
   const AddItem = (name, quantity, category) => {
@@ -118,14 +122,10 @@ export default function Home() {
 
   }
 
-  const AddQuantity = (num) => {
-    num = num + 1
+  const ClearData = () => {
     setMappedData(null);
+    setData([]);
     console.log(mappedData);
-
-    setTimeout(() => {
-      setMappedData(data);
-    }, 1);
   }
 
   return (
@@ -144,12 +144,11 @@ export default function Home() {
             <GroceryItem imgUrl="/banana.png" itemText="Bananas" onClick={() => AddItem("Bananas",1,"Fruits")} />
           </Subcolumn>
         </Column>
-        <button onClick={()=>console.log(mappedData[1])}>show data</button>
       </MainColumn>
       <Divider/>
       <MainColumn>
         <Title>Grocery List</Title>
-        <Column>
+        <Subcolumn>
         <GroceryList>
           {mappedData ? mappedData.map((o,i) => 
           <ListCont key={i}>
@@ -169,7 +168,8 @@ export default function Home() {
           ):
           <p></p>}
         </GroceryList>
-        </Column>
+        <DoneButton onClick={()=>ClearData()} />
+        </Subcolumn>
       </MainColumn>
     </AppCont>
   )
