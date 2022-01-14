@@ -84,6 +84,13 @@ export default function Home() {
 
         if(data[i].name == name){
           console.log("item exists");
+          data[i].quantity = data[i].quantity + 1;
+          setMappedData(null);
+          console.log(mappedData);
+      
+          setTimeout(() => {
+            setMappedData(data);
+          }, 1);
           return false;
         }
 
@@ -99,6 +106,8 @@ export default function Home() {
           setTimeout(() => {
             setMappedData(data);
           }, 1);
+
+          return false;
         }
 
         else {
@@ -108,13 +117,24 @@ export default function Home() {
     }
 
   }
+
+  const AddQuantity = (num) => {
+    num = num + 1
+    setMappedData(null);
+    console.log(mappedData);
+
+    setTimeout(() => {
+      setMappedData(data);
+    }, 1);
+  }
+
   return (
     <AppCont>
       <MainColumn>
         <Title>Popular Items</Title>
         <Column>
           <Subcolumn>
-            <GroceryItem imgUrl="/egg.png" itemText="Eggs" onClick={() => AddItem("Eggs",1,"Poultry")}/>
+            <GroceryItem imgUrl="/egg.png" itemText="Eggs" onClick={() => AddItem("Eggs",1,"Poultry")} />
             <GroceryItem imgUrl="/coffee.png" itemText="Coffee" onClick={() => AddItem("Coffee",1,"Dry Items")}/>
             <GroceryItem imgUrl="/milk.png" itemText="Milk" onClick={() => AddItem("Milk",1,"Dairy")}/>
           </Subcolumn>
@@ -133,7 +153,17 @@ export default function Home() {
         <GroceryList>
           {mappedData ? mappedData.map((o,i) => 
           <ListCont key={i}>
-            <ListItem ItemTitle={o.name} Quantity={o.quantity}/>
+            <ListItem ItemTitle={o.name} Quantity={o.quantity} 
+              
+              onClickPlus={() => {o.quantity = o.quantity + 1; setMappedData(null);
+                console.log(mappedData);
+                setTimeout(() => {
+                setMappedData(data);}, 1); }}
+              onClickMinus={() => {o.quantity = o.quantity - 1; setMappedData(null);
+                console.log(mappedData);
+                setTimeout(() => {
+                setMappedData(data);}, 1); }} 
+                />
           </ListCont>
           
           ):
