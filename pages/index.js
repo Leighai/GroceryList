@@ -63,18 +63,46 @@ const data = []
 export default function Home() {
   const [mappedData, setMappedData] = useState()
   
-    const AddItem = (name, quantity, category) => {
-  
+  const AddItem = (name, quantity, category) => {
+    var i;
+
+    if (data.length == 0)
+    {
       data.push({
         name,
         quantity,
         category
       })
-      
-  
-      setMappedData(data)
-      console.log(mappedData)
+      setMappedData(data);
+      console.log("First Item Received")
+
+      console.log(data[0].name);
     }
+
+    else {
+      for (i=0; i<data.length; i++) {
+
+        if(data[i].name == name){
+          console.log("item exists")
+        }
+
+        else {
+          data.push({
+            name,
+            quantity,
+            category
+          })
+          setMappedData(null);
+          console.log(mappedData);
+      
+          setTimeout(() => {
+            setMappedData(data);
+          }, 1);
+        }
+    }
+    }
+
+  }
   return (
     <AppCont>
       <MainColumn>
@@ -104,7 +132,7 @@ export default function Home() {
           </ListCont>
           
           ):
-          <p>Click a plus icon to add to the grocery list!</p>}
+          <p></p>}
         </GroceryList>
         </Column>
       </MainColumn>
