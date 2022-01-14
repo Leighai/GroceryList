@@ -12,6 +12,13 @@ const ListItemCont = styled.div`
   border: 0.5px solid #000;
 `
 
+const ListCont = styled.div`
+  width: 100px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+`
+
 const ListItemTitle = styled.h2`
   margin: 0;
   font-size: 20px;
@@ -30,6 +37,12 @@ const NumberCont = styled.div`
   border: 2px solid grey;
 `
 
+const Category = styled.h3`
+  font-size: 15px;
+  position: relative;
+  left: 40px;
+`
+
 const Column = styled.div`
   display: flex;
   flex-direction: column;
@@ -39,12 +52,15 @@ const ListItem = ({
   ItemTitle = "Default",
   Quantity=6,
   onClickPlus=()=>{},
-  onClickMinus=()=>{}
-
+  onClickMinus=()=>{},
+  category="poultry"
 }) => {
   return(
     <ListItemCont>
-      <ListItemTitle>{ItemTitle}</ListItemTitle>
+      <ListCont>
+        <ListItemTitle>{ItemTitle}</ListItemTitle>
+      </ListCont>
+
       <NumberCont>
         <p>{Quantity}</p>
       </NumberCont>
@@ -52,6 +68,11 @@ const ListItem = ({
         <QuantityButton sign="+" onClick={onClickPlus} />
         <QuantityButton sign="-" bgColor="lightgrey" onClick={onClickMinus} />
       </Column>
+
+      <Category>
+        {category}
+      </Category>
+
       <CompleteButton />
     </ListItemCont>
   )
