@@ -83,10 +83,11 @@ export default function Home() {
       for (i=0; i<data.length; i++) {
 
         if(data[i].name == name){
-          console.log("item exists")
+          console.log("item exists");
+          return false;
         }
 
-        else {
+        else if(i == (data.length - 1)){
           data.push({
             name,
             quantity,
@@ -98,6 +99,10 @@ export default function Home() {
           setTimeout(() => {
             setMappedData(data);
           }, 1);
+        }
+
+        else {
+          console.log('hello');
         }
     }
     }
